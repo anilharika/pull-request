@@ -1,0 +1,18 @@
+provider "aws"{
+    region ="ap-south-1"
+    access_key = "AKIAWYCWQUKAPEB3YBCO"
+    secret_key = "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"
+
+}
+ 
+resource "aws_instance" "AWSEC2INSTANCE"{
+
+    ami = "ami-05c8ca4485f8b138a"
+    instance_type  = "t2.micro"
+    security_groups =["launch-wizard-3"]
+    key_name = "terraform.pem"
+    tags = {
+        Name = "Redhat server by terraform"
+    }
+
+}
